@@ -47,6 +47,8 @@ class Game {
     car4.scale = 0.2;
     
     cars = [car1, car2, car3, car4];
+
+    console.log(car1)
     
   }
 
@@ -68,6 +70,7 @@ class Game {
       var index = 0;
       var x 
       var y  = 200
+      
 
       for(var plr in allPlayers){
         
@@ -78,6 +81,8 @@ class Game {
 
         
         x=   allPlayers[plr].distance 
+
+        
 
         if (index === player.index){
           stroke(10);
@@ -107,6 +112,7 @@ class Game {
     }
     }
     
+spawnObstacles()
   
   if(player.distance > 3000){
   
@@ -114,6 +120,23 @@ gameState = 2
 
 
   }
+
+  
+  car1.y = mouseY+300;
+  
+  
+
+  console.log(car1)
     drawSprites();
   }
+}
+
+
+function spawnObstacles(){
+if(World.frameCount%100===0){
+  obs1 = createSprite(3000,450,20,20)
+  obs1.addImage("hurdle",obs_image)
+  obs1.velocityX = -6
+  obs1.scale = 0.5;
+}
 }

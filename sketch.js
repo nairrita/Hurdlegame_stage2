@@ -18,6 +18,7 @@ car_2 = loadAnimation("images/runner22.png","images/runner23.png","images/runner
 car_3 = loadImage("images/plr1.png");
 car_4 = loadImage("images/plr2.png");
 track = loadImage("images/track.png");
+obs_image = loadImage("images/hurdle.png")
 }
 
 function setup(){
@@ -37,5 +38,10 @@ function draw(){
   if(gameState === 1){
     clear();
     game.play();
+  }
+
+  if(keyCode === 32){
+    console.log("xy")
+    car1.position.x = camera.position.x -100
   }
 }
